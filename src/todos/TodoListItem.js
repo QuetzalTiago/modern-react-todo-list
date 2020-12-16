@@ -1,6 +1,6 @@
 import React from "react";
 
-const TodoListItem = ({ todo }) => {
+const TodoListItem = ({ todo, onRemovePressed }) => {
   return (
     <div className="container pt-2">
       <div className="row">
@@ -9,7 +9,12 @@ const TodoListItem = ({ todo }) => {
         </div>
         <div className="col">
           <button className="button btn-primary">Mark as completed</button>
-          <button className="button btn-danger">Remove</button>
+          <button
+            onClick={() => onRemovePressed(todo.text)}
+            className="button btn-danger"
+          >
+            Remove
+          </button>
         </div>
       </div>
     </div>
